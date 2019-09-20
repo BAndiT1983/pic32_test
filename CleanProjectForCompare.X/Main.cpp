@@ -1,14 +1,22 @@
-// MCU header
+/* 
+ * File:   Main.cpp
+ * Author: dev
+ *
+ * Created on 23 July 2019, 15:59
+ */
+
+// System headers
+#include <cstdlib>
+
+// MCU headers
 //#include <xc.h>
 
 // Configuration
 #include "Configuration/PIC32.h"
 
 // Firmware headers
-#include "Configuration/PIC32.h"
-#include "Periphery/I2C.h"
-
 #include "Helpers.h"
+#include "Periphery/I2C.h"
 
 void ConfigGPIO()
 {
@@ -28,7 +36,7 @@ void InitPBUS(void)
     CFGCONbits.OCACLK = 1;
     TRISDbits.TRISD10 = 0;
     RPD10R = 0b1100;
-
+    
     LockPIC32();
 }
 
@@ -67,8 +75,6 @@ void Setup()
     // cacheable, non-coherent, write-back, alloc
     __builtin_mtc0(_CP0_CONFIG, 0, 0b011);
 
-    //SetupInterrupts();
-
     ConfigGPIO();
 
     init_icsp_w();
@@ -79,39 +85,33 @@ void Setup()
     init_i2c_e();
     DelayMs(1);
     
-    
     set_mclr_w(1);
     set_mclr_e(1);
     DelayMs(1);
 
     EnableIRQ();
-
-    //clear_framebuffer(ILI9341_CYAN);
 }
 
-//__attribute__((section(".reset.startup")))
-int main()
+/*
+ * 
+ */
+int main(int argc, char** argv)
 {
-    void (*fptr)(void);
-    int i = 5;
-    
     Setup();
     
     // RGB LED
     static uint8_t rgb[4];
-    rgb[0] = 0x00;
-    rgb[1] = 0x00;
-    rgb[2] = 0x04;
+    rgb[0] = 0x04;
+    rgb[1] = 0x04;
+    rgb[2] = 0x00;
     rgb[3] = 0x01;
     i2c3_setn(0x20, rgb, 4);
-    
-    fptr = (void (*)(void))0x9D000000;
-    //fptr();
-    
+
     while (1)
     {
-
+        DelayMs(30);
     }
-    
+
     return 0;
 }
+

@@ -17,7 +17,8 @@
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
-      <itemPath>procdefs.ld</itemPath>
+      <itemPath>procdefs_boot.ld</itemPath>
+      <itemPath>procdefs_common.ld</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -42,9 +43,9 @@
         <targetDevice>PIC32MZ2048ECG100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.20</languageToolchainVersion>
+        <languageToolchainVersion>2.30</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
@@ -58,6 +59,21 @@
         <archiverTool>
         </archiverTool>
         <loading>
+          <makeArtifact PL="../PIC32_UATest.X"
+                        CT="1"
+                        CN="default"
+                        AC="true"
+                        BL="true"
+                        WD="../PIC32_UATest.X"
+                        BC="${MAKE}  -f Makefile CONF=default"
+                        DBC="${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/default&quot; &quot;dist/default&quot;"
+                        OP="dist/default/production/PIC32_UATest.X.production.hex"
+                        DOP="dist/default/debug/PIC32_UATest.X.debug.elf"
+                        FL="dist/default/production/PIC32_UATest.X.production.hex"
+                        PD="dist/default/production/PIC32_UATest.X.production.elf"
+                        DD="dist/default/debug/PIC32_UATest.X.debug.elf">
+          </makeArtifact>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>true</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
@@ -164,7 +180,7 @@
         <property key="stack-size" value=""/>
         <property key="symbol-stripping" value=""/>
         <property key="trace-symbols" value=""/>
-        <property key="warn-section-align" value="false"/>
+        <property key="warn-section-align" value="true"/>
       </C32-LD>
       <C32CPP>
         <property key="additional-warnings" value="false"/>

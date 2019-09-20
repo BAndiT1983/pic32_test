@@ -16,6 +16,7 @@
             <sourceRootList>
                 <sourceRootElem>Periphery</sourceRootElem>
                 <sourceRootElem>Configuration</sourceRootElem>
+                <sourceRootElem>../CleanProjectForCompare.X</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
