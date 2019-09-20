@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.86"/>
+    <errors>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &amp;#039;ILI9341Display::_framebuffer&amp;#039; is not initialized in the constructor." verbose="Member variable &amp;#039;ILI9341Display::_framebuffer&amp;#039; is not initialized in the constructor." sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.cpp" line="10"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;LCDPumpReadf&amp;#039; is never used." verbose="The function &amp;#039;LCDPumpReadf&amp;#039; is never used." sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.cpp" line="39"/>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &amp;#039;UpdateFramebuffer&amp;#039; is never used." verbose="The function &amp;#039;UpdateFramebuffer&amp;#039; is never used." sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.cpp" line="79"/>
+        </error>
+        <error id="unusedPrivateFunction" severity="style" msg="Unused private function: &amp;#039;ILI9341Display::LCDPumpReadf&amp;#039;" verbose="Unused private function: &amp;#039;ILI9341Display::LCDPumpReadf&amp;#039;" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="28"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::LCDPumpRead&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::LCDPumpRead&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="27" info=""/>
+            <location file="Periphery/ILI9341Device.cpp" line="33" info=""/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::LCDPumpWrite&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::LCDPumpWrite&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="29" info=""/>
+            <location file="Periphery/ILI9341Device.cpp" line="47" info=""/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::GetWidth&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::GetWidth&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="39"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::GetHeight&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::GetHeight&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="44"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::UpdateFramebuffer&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::UpdateFramebuffer&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="51" info=""/>
+            <location file="Periphery/ILI9341Device.cpp" line="79" info=""/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::SetupBacklightControl&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::SetupBacklightControl&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="55" info=""/>
+            <location file="Periphery/ILI9341Device.cpp" line="15" info=""/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;ILI9341Display::SetBacklight&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;ILI9341Display::SetBacklight&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/ILI9341Device.h" line="56" info=""/>
+            <location file="Periphery/ILI9341Device.cpp" line="391" info=""/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;USBCDCDevice::Initialize&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;USBCDCDevice::Initialize&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/USBCDCDevice.h" line="994"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;USBCDCDevice::Process&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;USBCDCDevice::Process&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/USBCDCDevice.h" line="1018"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &amp;#039;USBCDCDevice::Send&amp;#039; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &amp;#039;USBCDCDevice::Send&amp;#039; can be made a static function. Making a function static can bring a performance benefit since no &amp;#039;this&amp;#039; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." inconclusive="true" sinceDate="20.08.19">
+            <location file="Periphery/USBCDCDevice.h" line="1036"/>
+        </error>
+    </errors>
+</results>

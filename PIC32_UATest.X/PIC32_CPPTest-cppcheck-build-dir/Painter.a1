@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="2398525307">
+  <FileInfo check="Bounds checking">
+    <ArraySize array="FreeSans12pt7bBitmaps" size="1969"/>
+    <ArraySize array="FreeSans12pt7bGlyphs" size="95"/>
+    <ArraySize array="FreeSans18pt7bBitmaps" size="4159"/>
+    <ArraySize array="FreeSans18pt7bGlyphs" size="95"/>
+    <ArraySize array="FreeSans24pt7bBitmaps" size="7464"/>
+    <ArraySize array="FreeSans24pt7bGlyphs" size="95"/>
+    <ArraySize array="FreeSans9pt7bBitmaps" size="1150"/>
+    <ArraySize array="FreeSans9pt7bGlyphs" size="95"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="DrawFillRectangle" lineNumber="22"/>
+    <functiondecl functionName="DrawImage" lineNumber="33"/>
+    <functiondecl functionName="DrawText" lineNumber="53"/>
+    <functiondecl functionName="DrawCharacter" lineNumber="205"/>
+    <functiondecl functionName="GetStringFramebufferWidth" lineNumber="239"/>
+    <functiondecl functionName="DrawPixel" lineNumber="288"/>
+    <functiondecl functionName="SetFont" lineNumber="302"/>
+    <functioncall functionName="DrawCharacter"/>
+    <functioncall functionName="DrawPixel"/>
+    <functioncall functionName="FreeSans12pt7b"/>
+    <functioncall functionName="FreeSans12pt7bBitmaps"/>
+    <functioncall functionName="FreeSans12pt7bGlyphs"/>
+    <functioncall functionName="FreeSans18pt7b"/>
+    <functioncall functionName="FreeSans18pt7bBitmaps"/>
+    <functioncall functionName="FreeSans18pt7bGlyphs"/>
+    <functioncall functionName="FreeSans24pt7b"/>
+    <functioncall functionName="FreeSans24pt7bBitmaps"/>
+    <functioncall functionName="FreeSans24pt7bGlyphs"/>
+    <functioncall functionName="FreeSans9pt7b"/>
+    <functioncall functionName="FreeSans9pt7bBitmaps"/>
+    <functioncall functionName="FreeSans9pt7bGlyphs"/>
+    <functioncall functionName="GetStringFramebufferWidth"/>
+    <functioncall functionName="Painter"/>
+    <functioncall functionName="SetFont"/>
+    <functioncall functionName="TEXT_ALIGN_CENTER"/>
+    <functioncall functionName="TEXT_ALIGN_LEFT"/>
+    <functioncall functionName="TEXT_ALIGN_RIGHT"/>
+    <functioncall functionName="_cursorX"/>
+    <functioncall functionName="_cursorY"/>
+    <functioncall functionName="_fontList"/>
+    <functioncall functionName="_framebuffer"/>
+    <functioncall functionName="_framebufferHeight"/>
+    <functioncall functionName="_framebufferWidth"/>
+    <functioncall functionName="bitmap"/>
+    <functioncall functionName="bitmapOffset"/>
+    <functioncall functionName="break"/>
+    <functioncall functionName="c"/>
+    <functioncall functionName="character"/>
+    <functioncall functionName="color"/>
+    <functioncall functionName="continue"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="first"/>
+    <functioncall functionName="first_letter"/>
+    <functioncall functionName="font"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="framebuffer"/>
+    <functioncall functionName="framebufferHeight"/>
+    <functioncall functionName="framebufferWidth"/>
+    <functioncall functionName="h"/>
+    <functioncall functionName="height"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="j"/>
+    <functioncall functionName="last"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="pixel"/>
+    <functioncall functionName="str"/>
+    <functioncall functionName="strlen"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="text"/>
+    <functioncall functionName="textblockwidth"/>
+    <functioncall functionName="textframebuffer_width"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="uint16_t"/>
+    <functioncall functionName="value2"/>
+    <functioncall functionName="w"/>
+    <functioncall functionName="width"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="xAdvance"/>
+    <functioncall functionName="xIndex"/>
+    <functioncall functionName="xOffset"/>
+    <functioncall functionName="xo"/>
+    <functioncall functionName="xx"/>
+    <functioncall functionName="y"/>
+    <functioncall functionName="yAdvance"/>
+    <functioncall functionName="yOffset"/>
+    <functioncall functionName="yy"/>
+  </FileInfo>
+</analyzerinfo>

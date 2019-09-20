@@ -1,0 +1,5 @@
+GlobalSettings.a1::/home/dev/MPLABXProjects/PIC32_CPPTest.X/GlobalSettings.cpp
+Main.a1::/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp
+ILI9341Device.a1::/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp
+USBCDCDevice.a1::/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/USBCDCDevice.cpp
+Painter.a1::/home/dev/MPLABXProjects/PIC32_CPPTest.X/UI/Painter.cpp

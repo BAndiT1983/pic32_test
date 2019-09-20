@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="164066520">
+  <FileInfo check="Bounds checking">
+    <ArraySize array="backlight_linear_percentage" size="101"/>
+  </FileInfo>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;ILI9341Display::_framebuffer&apos; is not initialized in the constructor." verbose="Member variable &apos;ILI9341Display::_framebuffer&apos; is not initialized in the constructor." cwe="398">
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="10"/>
+            <symbol>ILI9341Display::_framebuffer</symbol>
+        </error>
+        <error id="unusedPrivateFunction" severity="style" msg="Unused private function: &apos;ILI9341Display::LCDPumpReadf&apos;" verbose="Unused private function: &apos;ILI9341Display::LCDPumpReadf&apos;" cwe="398">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="28"/>
+            <symbol>ILI9341Display::LCDPumpReadf</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::LCDPumpRead&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::LCDPumpRead&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="27"/>
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="33"/>
+            <symbol>ILI9341Display::LCDPumpRead</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::LCDPumpWrite&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::LCDPumpWrite&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="29"/>
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="47"/>
+            <symbol>ILI9341Display::LCDPumpWrite</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::GetWidth&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::GetWidth&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="39"/>
+            <symbol>ILI9341Display::GetWidth</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::GetHeight&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::GetHeight&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="44"/>
+            <symbol>ILI9341Display::GetHeight</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::UpdateFramebuffer&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::UpdateFramebuffer&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="51"/>
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="79"/>
+            <symbol>ILI9341Display::UpdateFramebuffer</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::SetupBacklightControl&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::SetupBacklightControl&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="55"/>
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="15"/>
+            <symbol>ILI9341Display::SetupBacklightControl</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::SetBacklight&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::SetBacklight&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="56"/>
+            <location file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.cpp" line="391"/>
+            <symbol>ILI9341Display::SetBacklight</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="SetupBacklightControl" lineNumber="15"/>
+    <functiondecl functionName="LCDPumpRead" lineNumber="33"/>
+    <functiondecl functionName="LCDPumpReadf" lineNumber="39"/>
+    <functiondecl functionName="LCDPumpWrite" lineNumber="47"/>
+    <functiondecl functionName="LCDPumpWrite16" lineNumber="53"/>
+    <functiondecl functionName="LCDPumpCommand" lineNumber="59"/>
+    <functiondecl functionName="GetFramebuffer" lineNumber="66"/>
+    <functiondecl functionName="ClearFramebuffer" lineNumber="71"/>
+    <functiondecl functionName="UpdateFramebuffer" lineNumber="79"/>
+    <functiondecl functionName="Initialize" lineNumber="84"/>
+    <functiondecl functionName="DisplayFramebuffer" lineNumber="372"/>
+    <functiondecl functionName="SetBacklight" lineNumber="391"/>
+    <functioncall functionName="BUSY"/>
+    <functioncall functionName="BUTTON_1"/>
+    <functioncall functionName="BUTTON_10"/>
+    <functioncall functionName="BUTTON_11"/>
+    <functioncall functionName="BUTTON_12"/>
+    <functioncall functionName="BUTTON_2"/>
+    <functioncall functionName="BUTTON_3"/>
+    <functioncall functionName="BUTTON_4"/>
+    <functioncall functionName="BUTTON_5"/>
+    <functioncall functionName="BUTTON_6"/>
+    <functioncall functionName="BUTTON_7"/>
+    <functioncall functionName="BUTTON_8"/>
+    <functioncall functionName="BUTTON_9"/>
+    <functioncall functionName="BUTTON_NONE"/>
+    <functioncall functionName="ClearFramebuffer"/>
+    <functioncall functionName="DelayMs"/>
+    <functioncall functionName="ILI9341Display"/>
+    <functioncall functionName="LCDPumpCommand"/>
+    <functioncall functionName="LCDPumpRead"/>
+    <functioncall functionName="LCDPumpWrite"/>
+    <functioncall functionName="LCDPumpWrite16"/>
+    <functioncall functionName="RG15"/>
+    <functioncall functionName="SetupBacklightControl"/>
+    <functioncall functionName="_framebufferSize"/>
+    <functioncall functionName="asm"/>
+    <functioncall functionName="brightnessPercentage"/>
+    <functioncall functionName="cmd"/>
+    <functioncall functionName="color"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="index"/>
+    <functioncall functionName="percentage"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="uint8_t"/>
+    <functioncall functionName="while"/>
+  </FileInfo>
+</analyzerinfo>

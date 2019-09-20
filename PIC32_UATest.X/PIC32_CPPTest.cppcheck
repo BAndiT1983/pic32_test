@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="1">
+    <builddir>PIC32_CPPTest-cppcheck-build-dir</builddir>
+    <platform>Native</platform>
+    <analyze-all-vs-configs>true</analyze-all-vs-configs>
+    <paths>
+        <dir name="/home/dev/MPLABXProjects/PIC32_CPPTest.X"/>
+    </paths>
+    <tools>
+        <tool>clang-tidy</tool>
+    </tools>
+</project>

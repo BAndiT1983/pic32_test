@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<analyzerinfo checksum="4011795596">
+  <FileInfo check="Bounds checking">
+    <ArraySize array="backlight_linear_percentage" size="101"/>
+    <ArraySize array="buf" size="4096"/>
+    <ArraySize array="conf_desc" size="67"/>
+    <ArraySize array="debugText" size="32"/>
+    <ArraySize array="dev_desc" size="18"/>
+    <ArraySize array="ep0data" size="64"/>
+    <ArraySize array="ep1data" size="64"/>
+    <ArraySize array="ep2data" size="64"/>
+    <ArraySize array="ep3data" size="64"/>
+    <ArraySize array="knob_position" size="2"/>
+    <ArraySize array="loop" size="256"/>
+    <ArraySize array="string0" size="2"/>
+    <ArraySize array="string1" size="12"/>
+    <ArraySize array="string2" size="13"/>
+    <ArraySize array="string3" size="9"/>
+    <ArraySize array="string4" size="8"/>
+    <ArraySize array="string5" size="4"/>
+  </FileInfo>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::GetWidth&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::GetWidth&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="39"/>
+            <symbol>ILI9341Display::GetWidth</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;ILI9341Display::GetHeight&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;ILI9341Display::GetHeight&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/ILI9341Device.h" line="44"/>
+            <symbol>ILI9341Display::GetHeight</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;USBCDCDevice::Initialize&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;USBCDCDevice::Initialize&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/USBCDCDevice.h" line="994"/>
+            <symbol>USBCDCDevice::Initialize</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;USBCDCDevice::Process&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;USBCDCDevice::Process&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/USBCDCDevice.h" line="1018"/>
+            <symbol>USBCDCDevice::Process</symbol>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;USBCDCDevice::Send&apos; can be static (but you may consider moving to unnamed namespace)." verbose="The member function &apos;USBCDCDevice::Send&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances? And maybe it is more appropriate to move this function to a unnamed namespace." cwe="398" inconclusive="true">
+            <location file0="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Main.cpp" file="/home/dev/MPLABXProjects/PIC32_CPPTest.X/Periphery/USBCDCDevice.h" line="1036"/>
+            <symbol>USBCDCDevice::Send</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl functionName="ConfigGPIO" lineNumber="30"/>
+    <functiondecl functionName="InitPBUS" lineNumber="36"/>
+    <functiondecl functionName="SetupInterrupts" lineNumber="62"/>
+    <functiondecl functionName="init_icsp_w" lineNumber="76"/>
+    <functiondecl functionName="init_icsp_e" lineNumber="82"/>
+    <functiondecl functionName="set_mclr_w" lineNumber="89"/>
+    <functiondecl functionName="set_mclr_e" lineNumber="95"/>
+    <functiondecl functionName="Setup" lineNumber="100"/>
+    <functiondecl functionName="PollKMW" lineNumber="144"/>
+    <functiondecl functionName="PollKME" lineNumber="179"/>
+    <functiondecl functionName="main" lineNumber="267"/>
+    <functioncall functionName="ACKEN"/>
+    <functioncall functionName="ACKSTAT"/>
+    <functioncall functionName="Activate"/>
+    <functioncall functionName="AnalogGainButtonHandler"/>
+    <functioncall functionName="BUTTON_1"/>
+    <functioncall functionName="BUTTON_10"/>
+    <functioncall functionName="BUTTON_11"/>
+    <functioncall functionName="BUTTON_12"/>
+    <functioncall functionName="BUTTON_2"/>
+    <functioncall functionName="BUTTON_3"/>
+    <functioncall functionName="BUTTON_4"/>
+    <functioncall functionName="BUTTON_5"/>
+    <functioncall functionName="BUTTON_6"/>
+    <functioncall functionName="BUTTON_7"/>
+    <functioncall functionName="BUTTON_8"/>
+    <functioncall functionName="BUTTON_9"/>
+    <functioncall functionName="BUTTON_NONE"/>
+    <functioncall functionName="ClearFramebuffer"/>
+    <functioncall functionName="ConfigGPIO"/>
+    <functioncall functionName="DelayMs"/>
+    <functioncall functionName="DigitalGainButtonHandler"/>
+    <functioncall functionName="DisableIRQ"/>
+    <functioncall functionName="DisplayFramebuffer"/>
+    <functioncall functionName="Draw"/>
+    <functioncall functionName="DrawFillRectangle"/>
+    <functioncall functionName="DrawImage"/>
+    <functioncall functionName="DrawText"/>
+    <functioncall functionName="EnableIRQ"/>
+    <functioncall functionName="FUNC"/>
+    <functioncall functionName="FreeSans12pt7b"/>
+    <functioncall functionName="FreeSans18pt7b"/>
+    <functioncall functionName="FreeSans24pt7b"/>
+    <functioncall functionName="FreeSans9pt7b"/>
+    <functioncall functionName="GetBackgroundColor"/>
+    <functioncall functionName="GetFramebuffer"/>
+    <functioncall functionName="GetHeight"/>
+    <functioncall functionName="GetWidth"/>
+    <functioncall functionName="HideValue"/>
+    <functioncall functionName="I2C2RCV"/>
+    <functioncall functionName="I2C3RCV"/>
+    <functioncall functionName="IPL7SRS"/>
+    <functioncall functionName="InitPBUS"/>
+    <functioncall functionName="Initialize"/>
+    <functioncall functionName="LockPIC32"/>
+    <functioncall functionName="MainMenuButton"/>
+    <functioncall functionName="MenuButtonHandler"/>
+    <functioncall functionName="PollKME"/>
+    <functioncall functionName="PollKMW"/>
+    <functioncall functionName="Process"/>
+    <functioncall functionName="RBF"/>
+    <functioncall functionName="RGB565"/>
+    <functioncall functionName="RSEN"/>
+    <functioncall functionName="RXCNT"/>
+    <functioncall functionName="RXRDY"/>
+    <functioncall functionName="SEN"/>
+    <functioncall functionName="SETEND"/>
+    <functioncall functionName="STALLED"/>
+    <functioncall functionName="S_IDLE"/>
+    <functioncall functionName="S_RESET"/>
+    <functioncall functionName="S_RXPKT"/>
+    <functioncall functionName="S_STATUS"/>
+    <functioncall functionName="S_TXPKT"/>
+    <functioncall functionName="S_ZERO"/>
+    <functioncall functionName="Send"/>
+    <functioncall functionName="SetBackgroundColor"/>
+    <functioncall functionName="SetBacklight"/>
+    <functioncall functionName="SetCaptionFont"/>
+    <functioncall functionName="SetCaptionHeight"/>
+    <functioncall functionName="SetFont"/>
+    <functioncall functionName="SetHandler"/>
+    <functioncall functionName="SetValue"/>
+    <functioncall functionName="Setup"/>
+    <functioncall functionName="SetupInterrupts"/>
+    <functioncall functionName="TEXT_ALIGN_CENTER"/>
+    <functioncall functionName="TEXT_ALIGN_LEFT"/>
+    <functioncall functionName="TEXT_ALIGN_RIGHT"/>
+    <functioncall functionName="TRSTAT"/>
+    <functioncall functionName="TXPKTRDY"/>
+    <functioncall functionName="USBCSR0"/>
+    <functioncall functionName="USBCSR1"/>
+    <functioncall functionName="USBCSR2"/>
+    <functioncall functionName="USBFIFO0"/>
+    <functioncall functionName="USBFIFO1"/>
+    <functioncall functionName="USBFIFO2"/>
+    <functioncall functionName="USBFIFO3"/>
+    <functioncall functionName="USB_ISR"/>
+    <functioncall functionName="UnlockPIC32"/>
+    <functioncall functionName="Update"/>
+    <functioncall functionName="_CP0_CONFIG"/>
+    <functioncall functionName="_IFS4_USBIF_MASK"/>
+    <functioncall functionName="_USBE0CSR0_DATAEND_MASK"/>
+    <functioncall functionName="_USB_VECTOR"/>
+    <functioncall functionName="__builtin_mtc0"/>
+    <functioncall functionName="_analogGainButton"/>
+    <functioncall functionName="_backgroundColor"/>
+    <functioncall functionName="_caption"/>
+    <functioncall functionName="_captionFont"/>
+    <functioncall functionName="_captionHeight"/>
+    <functioncall functionName="_cdcDevice"/>
+    <functioncall functionName="_digitalGainButton"/>
+    <functioncall functionName="_fpsButton"/>
+    <functioncall functionName="_framebufferSize"/>
+    <functioncall functionName="_handlerPtr"/>
+    <functioncall functionName="_hideValue"/>
+    <functioncall functionName="_invertOrder"/>
+    <functioncall functionName="_menuButton"/>
+    <functioncall functionName="_shutterButton"/>
+    <functioncall functionName="_value"/>
+    <functioncall functionName="_valueFont"/>
+    <functioncall functionName="_valueHeight"/>
+    <functioncall functionName="_whiteBalanceButton"/>
+    <functioncall functionName="_width"/>
+    <functioncall functionName="_x"/>
+    <functioncall functionName="_y"/>
+    <functioncall functionName="ackdt"/>
+    <functioncall functionName="asm"/>
+    <functioncall functionName="bmbRequest"/>
+    <functioncall functionName="break"/>
+    <functioncall functionName="brightness"/>
+    <functioncall functionName="brightnessPercentage"/>
+    <functioncall functionName="buf_byte"/>
+    <functioncall functionName="buf_ch"/>
+    <functioncall functionName="buf_hex"/>
+    <functioncall functionName="buf_nl"/>
+    <functioncall functionName="buf_str0"/>
+    <functioncall functionName="buf_word"/>
+    <functioncall functionName="button"/>
+    <functioncall functionName="byte"/>
+    <functioncall functionName="caption"/>
+    <functioncall functionName="cdcDevice"/>
+    <functioncall functionName="ch"/>
+    <functioncall functionName="cnt"/>
+    <functioncall functionName="color"/>
+    <functioncall functionName="conf_desc"/>
+    <functioncall functionName="counter"/>
+    <functioncall functionName="csr1"/>
+    <functioncall functionName="data"/>
+    <functioncall functionName="data_status"/>
+    <functioncall functionName="debugText"/>
+    <functioncall functionName="default"/>
+    <functioncall functionName="dev_addr"/>
+    <functioncall functionName="dev_desc"/>
+    <functioncall functionName="diff"/>
+    <functioncall functionName="display"/>
+    <functioncall functionName="ep0rbc"/>
+    <functioncall functionName="ep0s"/>
+    <functioncall functionName="ep0tbc"/>
+    <functioncall functionName="ep1tbc"/>
+    <functioncall functionName="ep2rbc"/>
+    <functioncall functionName="ep3data"/>
+    <functioncall functionName="ep3tbc"/>
+    <functioncall functionName="false"/>
+    <functioncall functionName="font"/>
+    <functioncall functionName="for"/>
+    <functioncall functionName="handler"/>
+    <functioncall functionName="height"/>
+    <functioncall functionName="hex"/>
+    <functioncall functionName="hide"/>
+    <functioncall functionName="i"/>
+    <functioncall functionName="i2c2_bb_stop"/>
+    <functioncall functionName="i2c2_getn"/>
+    <functioncall functionName="i2c2_read"/>
+    <functioncall functionName="i2c2_restart"/>
+    <functioncall functionName="i2c2_start"/>
+    <functioncall functionName="i2c2_write"/>
+    <functioncall functionName="i2c3_bb_stop"/>
+    <functioncall functionName="i2c3_getn"/>
+    <functioncall functionName="i2c3_read"/>
+    <functioncall functionName="i2c3_restart"/>
+    <functioncall functionName="i2c3_start"/>
+    <functioncall functionName="i2c3_write"/>
+    <functioncall functionName="i2c_bb_delay"/>
+    <functioncall functionName="idx"/>
+    <functioncall functionName="if"/>
+    <functioncall functionName="index"/>
+    <functioncall functionName="init_i2c_e"/>
+    <functioncall functionName="init_i2c_w"/>
+    <functioncall functionName="init_icsp_e"/>
+    <functioncall functionName="init_icsp_w"/>
+    <functioncall functionName="invertOrder"/>
+    <functioncall functionName="length"/>
+    <functioncall functionName="loop_ch"/>
+    <functioncall functionName="mainMenu"/>
+    <functioncall functionName="next"/>
+    <functioncall functionName="nullptr"/>
+    <functioncall functionName="painter"/>
+    <functioncall functionName="pixel_data"/>
+    <functioncall functionName="ret"/>
+    <functioncall functionName="return"/>
+    <functioncall functionName="sender"/>
+    <functioncall functionName="set_mclr_e"/>
+    <functioncall functionName="set_mclr_w"/>
+    <functioncall functionName="sizeof"/>
+    <functioncall functionName="sprintf"/>
+    <functioncall functionName="static_cast"/>
+    <functioncall functionName="string0"/>
+    <functioncall functionName="string1"/>
+    <functioncall functionName="string2"/>
+    <functioncall functionName="string3"/>
+    <functioncall functionName="string4"/>
+    <functioncall functionName="string5"/>
+    <functioncall functionName="switch"/>
+    <functioncall functionName="this"/>
+    <functioncall functionName="true"/>
+    <functioncall functionName="usb_conf"/>
+    <functioncall functionName="usb_ep0"/>
+    <functioncall functionName="usb_ep0_addr"/>
+    <functioncall functionName="usb_ep0_ctrl_read"/>
+    <functioncall functionName="usb_ep0_ctrl_write"/>
+    <functioncall functionName="usb_ep0_flush"/>
+    <functioncall functionName="usb_ep0_stall"/>
+    <functioncall functionName="usb_ep0_tx"/>
+    <functioncall functionName="usb_ep0_zero"/>
+    <functioncall functionName="usb_ep1_tx"/>
+    <functioncall functionName="usb_ep2_rx"/>
+    <functioncall functionName="usb_ep3_tx"/>
+    <functioncall functionName="usb_reset"/>
+    <functioncall functionName="usb_reset_ep0"/>
+    <functioncall functionName="usb_reset_ep1"/>
+    <functioncall functionName="usb_reset_ep2"/>
+    <functioncall functionName="usb_reset_ep3"/>
+    <functioncall functionName="val"/>
+    <functioncall functionName="value"/>
+    <functioncall functionName="void"/>
+    <functioncall functionName="wIndex"/>
+    <functioncall functionName="wLength"/>
+    <functioncall functionName="wValue"/>
+    <functioncall functionName="while"/>
+    <functioncall functionName="width"/>
+    <functioncall functionName="x"/>
+    <functioncall functionName="y"/>
+  </FileInfo>
+</analyzerinfo>
