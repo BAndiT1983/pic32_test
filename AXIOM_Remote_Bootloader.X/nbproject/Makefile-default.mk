@@ -136,28 +136,19 @@ dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${OUTPUT_
 	${MP_CPPC} $(MP_EXTRA_LD_PRE) -g -mdebugger -D__MPLAB_DEBUGGER_PK3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)   -mreserve=data@0x0:0x27F   -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D=__DEBUG_D,--defsym=__MPLAB_DEBUGGER_PK3=1,--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--warn-section-align,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   procdefs_boot.ld ../PIC32_UATest.X/dist/default/production/PIC32_UATest.X.production.hex
+dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   procdefs_boot.ld
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
 	${MP_CPPC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} ${OBJECTFILES_QUOTED_IF_SPACED}          -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -Wl,--defsym=__MPLAB_BUILD=1$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--warn-section-align,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml
 	${MP_CC_DIR}/xc32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} 
-	@echo "Creating unified hex file"
-	@"/home/dev/MPLABX/mplab_platform/platform/../mplab_ide/modules/../../bin/hexmate" --edf="/home/dev/MPLABX/mplab_platform/platform/../mplab_ide/modules/../../dat/en_msgs.txt" dist/${CND_CONF}/${IMAGE_TYPE}/AXIOM_Remote_Bootloader.X.${IMAGE_TYPE}.hex ../PIC32_UATest.X/dist/default/production/PIC32_UATest.X.production.hex -odist/${CND_CONF}/production/AXIOM_Remote_Bootloader.X.production.unified.hex
-
 endif
 
 
 # Subprojects
 .build-subprojects:
-ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-	cd ../PIC32_UATest.X && ${MAKE}  -f Makefile CONF=default TYPE_IMAGE=DEBUG_RUN
-else
-	cd ../PIC32_UATest.X && ${MAKE}  -f Makefile CONF=default
-endif
 
 
 # Subprojects
 .clean-subprojects:
-	cd ../PIC32_UATest.X && rm -rf "build/default" "dist/default"
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
