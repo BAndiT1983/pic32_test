@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/dev/MPLABXProjects/AXIOM_Remote_Bootloader.X/Configuration/PIC32.h</file>
-            <file>file:/home/dev/MPLABXProjects/AXIOM_Remote_Bootloader.X/procdefs.ld</file>
-            <file>file:/home/dev/MPLABXProjects/AXIOM_Remote_Bootloader.X/Periphery/I2C.h</file>
-            <file>file:/home/dev/MPLABXProjects/AXIOM_Remote_Bootloader.X/Main.cpp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
