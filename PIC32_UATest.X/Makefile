@@ -9,12 +9,13 @@ SOURCE_FILES=Main.cpp #$(wildcard *.cpp)
 OBJS = ${SOURCE_FILES:.cpp=.o}
 DEPS = ${SOURCE_FILES:.cpp=.d}
 
-OPTS=-g -x c++ -c -mprocessor=32MZ2048ECG100 -fno-rtti -fno-exceptions -fno-check-new -fno-enforce-eh-specs -Wall -MMD -MF 
-LD_OPTS=-Wl,--defsym=__MPLAB_BUILD=1,--script="procdefs_app.ld",--no-code-in-dinit,--no-dinit-in-serial-mem,-Map="${BUILD_DIR}/UATest_memory.map",--report-mem,--cref,--warn-section-align,--memorysummary,${BUILD_DIR}/memoryfile.xml
+OPTS= -g -x c++ -c -mprocessor=32MZ2048ECG100 -fno-rtti -fno-exceptions -fno-check-new -fno-enforce-eh-specs -Wall -MMD -MF 
+LD_OPTS= --defsym=__MPLAB_BUILD=1 --script="procdefs_app.ld" --no-code-in-dinit --no-dinit-in-serial-mem -Map="${BUILD_DIR}/UATest_memory.map" --report-mem --cref --warn-section-align --memorysummary ${BUILD_DIR}/memoryfile.xml
 
 ${OBJS}: ${SOURCE_FILES}
 	@ mkdir -p build
-	${CC} ${OPTS} ${BUILD_DIR}/${DEPS} $< -o ${BUILD_DIR}/UATest.elf -lstdc++ ${LD_OPTS}
+	${CC} ${OPTS} ${BUILD_DIR}/${DEPS} $< -o ${BUILD_DIR}/$@ -lstdc++ 
+	${LD} -o ${BUILD_DIR}/UATest.elf ${LD_OPTS}
 
 .PHONY: clean
 clean:
