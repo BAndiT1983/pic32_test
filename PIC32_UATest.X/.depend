@@ -1,2 +1,0 @@
-Main.o: Main.cpp Helpers.h Definitions.h Periphery/I2C.h \
- Periphery/I2CDefinitions.h
