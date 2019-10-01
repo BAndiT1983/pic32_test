@@ -1,4 +1,50 @@
+<<<<<<< HEAD
 /* Default linker script, for normal executables */
+=======
+/*--------------------------------------------------------------------------
+ * MPLAB XC Compiler -  PIC32MZ2048ECG100 linker script
+ * Build date : Jul 16 2019
+ *
+ * Copyright (c) 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * All rights reserved.
+ *
+ * This software is developed by Microchip Technology Inc. and its
+ * subsidiaries ("Microchip").
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ * 1.      Redistributions of source code must retain the above copyright
+ *         notice, this list of conditions and the following disclaimer.
+ * 2.      Redistributions in binary form must reproduce the above
+ *         copyright notice, this list of conditions and the following
+ *         disclaimer in the documentation and/or other materials provided
+ *         with the distribution.
+ * 3.      Microchip's name may not be used to endorse or promote products
+ *         derived from this software without specific prior written
+ *         permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR PURPOSE ARE DISCLAIMED. IN NO EVENT
+ * SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/* Default linker script, for normal executables */
+
+/*  NOTE: This single-file linker script replaces the two-file system used
+ *  for older PIC32 devices.
+ */
+
+>>>>>>> master
 OUTPUT_FORMAT("elf32-tradlittlemips")
 OUTPUT_ARCH(pic32mx)
 ENTRY(_reset)
@@ -13,8 +59,12 @@ ENTRY(_reset)
  *                     the command line using the linker's --defsym option.
  */
 EXTERN (_min_stack_size _min_heap_size)
+<<<<<<< HEAD
 PROVIDE(_min_stack_size = 0x800) ;
 PROVIDE(_min_heap_size = 0x800) ;
+=======
+/*PROVIDE(_min_stack_size = 0x400) ;*/
+>>>>>>> master
 
 /*************************************************************************
  * Legacy processor-specific object file.  Contains SFR definitions.
@@ -25,7 +75,7 @@ PROVIDE(_min_heap_size = 0x800) ;
  * OPTIONAL() line below and add the pic32mx/lib/proc/<device>.S file
  * to your project.
  *************************************************************************/
-OPTIONAL("processor.o")
+/*OPTIONAL("processor.o")*/
 
 
 /*************************************************************************
@@ -77,6 +127,7 @@ MEMORY
     /* Interrupt vector table */
     exception_mem               : ORIGIN = 0x9D000000, LENGTH = 0x1000
 
+<<<<<<< HEAD
     /* Bootloader C program is in the Boot_Flash */
     /* adjust length, as the boot program grows. (0x80000 for now) */
     kseg0_program_mem      (rx) : ORIGIN = 0x9D001000, LENGTH = 128k
@@ -89,6 +140,19 @@ MEMORY
     /* other half of boot flash */
     kseg1_boot_mem              : ORIGIN = 0xBFC00000, LENGTH = 0x0
     kseg1_boot_mem_4B0          : ORIGIN = 0x9D0014B0, LENGTH = (0x1000 - 0x4B0)
+=======
+    /* first half of boot flash, dummy section */
+    kseg0_boot_mem              : ORIGIN = 0x9D001000, LENGTH = 0x970
+
+    /* other half of boot flash */
+    kseg1_boot_mem              : ORIGIN = 0x9D001000 + 0x970, LENGTH = 0x490
+    kseg1_boot_mem_4B0          : ORIGIN = 0x9D001000 + 0x970 + 0x490, LENGTH = (0x1000 - 0x4B0)
+
+    /* Bootloader C program is in the Boot_Flash */
+    /* adjust length, as the boot program grows. (0x80000 for now) */
+    kseg0_program_mem      (rx) : ORIGIN = 0x9D004000, LENGTH = 32K
+
+>>>>>>> master
 
   config_BFC0FF40             : ORIGIN = 0xBFC0FF40, LENGTH = 0x4
   config_BFC0FF44             : ORIGIN = 0xBFC0FF44, LENGTH = 0x4
@@ -234,7 +298,7 @@ MEMORY
   /*boot2lastpage               : ORIGIN = 0xBFC70000, LENGTH = 0x4000*/
   kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000, LENGTH = 0x80000
   sfrs                        : ORIGIN = 0xBF800000, LENGTH = 0x100000
-  configsfrs_BFC0FF40         : ORIGIN = 0xBFC0FF40, LENGTH = 0x40
+  /*configsfrs_BFC0FF40         : ORIGIN = 0xBFC0FF40, LENGTH = 0x40
   configsfrs_BFC0FFC0         : ORIGIN = 0xBFC0FFC0, LENGTH = 0x40
   configsfrs_BFC2FF40         : ORIGIN = 0xBFC2FF40, LENGTH = 0x40
   configsfrs_BFC2FFC0         : ORIGIN = 0xBFC2FFC0, LENGTH = 0x40
@@ -247,7 +311,7 @@ MEMORY
   kseg2_ebi_data_mem          : ORIGIN = 0xC0000000, LENGTH = 0x4000000
   kseg2_sqi_data_mem          : ORIGIN = 0xD0000000, LENGTH = 0x4000000
   kseg3_ebi_data_mem          : ORIGIN = 0xE0000000, LENGTH = 0x4000000
-  kseg3_sqi_data_mem          : ORIGIN = 0xF0000000, LENGTH = 0x4000000
+  kseg3_sqi_data_mem          : ORIGIN = 0xF0000000, LENGTH = 0x4000000*/
 }
 
 INCLUDE "procdefs_common.ld"
