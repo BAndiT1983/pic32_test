@@ -33,6 +33,5 @@
 
 */dist/
 */disassembly/
-/CleanProjectForCompare.X/build/
-/PIC32_CPPTest.X/build/
-/AXIOM_Remote_Bootloader.X/build/
+*/build/
+*/nbproject/private/

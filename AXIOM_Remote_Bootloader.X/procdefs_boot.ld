@@ -162,8 +162,8 @@ MEMORY
   config_BFC0FFF4             : ORIGIN = 0xBFC0FFF4, LENGTH = 0x4
   config_BFC0FFF8             : ORIGIN = 0xBFC0FFF8, LENGTH = 0x4
   config_BFC0FFFC             : ORIGIN = 0xBFC0FFFC, LENGTH = 0x4
-  lowerbootaliaslastpage      : ORIGIN = 0xBFC10000, LENGTH = 0x4000
-  upperbootalias              : ORIGIN = 0xBFC20000, LENGTH = 0xFF00
+  /*lowerbootaliaslastpage      : ORIGIN = 0xBFC10000, LENGTH = 0x4000
+  upperbootalias              : ORIGIN = 0xBFC20000, LENGTH = 0xFF00*/
   config_BFC2FF40             : ORIGIN = 0xBFC2FF40, LENGTH = 0x4
   config_BFC2FF44             : ORIGIN = 0xBFC2FF44, LENGTH = 0x4
   config_BFC2FF48             : ORIGIN = 0xBFC2FF48, LENGTH = 0x4
@@ -196,8 +196,8 @@ MEMORY
   config_BFC2FFF4             : ORIGIN = 0xBFC2FFF4, LENGTH = 0x4
   config_BFC2FFF8             : ORIGIN = 0xBFC2FFF8, LENGTH = 0x4
   config_BFC2FFFC             : ORIGIN = 0xBFC2FFFC, LENGTH = 0x4
-  upperbootaliaslastpage      : ORIGIN = 0xBFC30000, LENGTH = 0x4000
-  boot1                       : ORIGIN = 0xBFC40000, LENGTH = 0xFF00
+  /*upperbootaliaslastpage      : ORIGIN = 0xBFC30000, LENGTH = 0x4000
+  boot1                       : ORIGIN = 0xBFC40000, LENGTH = 0xFF00*/
   config_BFC4FF40             : ORIGIN = 0xBFC4FF40, LENGTH = 0x4
   config_BFC4FF44             : ORIGIN = 0xBFC4FF44, LENGTH = 0x4
   config_BFC4FF48             : ORIGIN = 0xBFC4FF48, LENGTH = 0x4
@@ -230,7 +230,7 @@ MEMORY
   config_BFC4FFF4             : ORIGIN = 0xBFC4FFF4, LENGTH = 0x4
   config_BFC4FFF8             : ORIGIN = 0xBFC4FFF8, LENGTH = 0x4
   config_BFC4FFFC             : ORIGIN = 0xBFC4FFFC, LENGTH = 0x4
-  boot1lastpage               : ORIGIN = 0xBFC50000, LENGTH = 0x4000
+/*  boot1lastpage               : ORIGIN = 0xBFC50000, LENGTH = 0x4000*/
   config_BFC54000             : ORIGIN = 0xBFC54000, LENGTH = 0x4
   config_BFC54004             : ORIGIN = 0xBFC54004, LENGTH = 0x4
   config_BFC54008             : ORIGIN = 0xBFC54008, LENGTH = 0x4
@@ -238,7 +238,7 @@ MEMORY
   config_BFC54010             : ORIGIN = 0xBFC54010, LENGTH = 0x4
   config_BFC54020             : ORIGIN = 0xBFC54020, LENGTH = 0x4
   config_BFC54024             : ORIGIN = 0xBFC54024, LENGTH = 0x4
-  boot2                       : ORIGIN = 0xBFC60000, LENGTH = 0xFF00
+  /*boot2                       : ORIGIN = 0xBFC60000, LENGTH = 0xFF00*/
   config_BFC6FF40             : ORIGIN = 0xBFC6FF40, LENGTH = 0x4
   config_BFC6FF44             : ORIGIN = 0xBFC6FF44, LENGTH = 0x4
   config_BFC6FF48             : ORIGIN = 0xBFC6FF48, LENGTH = 0x4

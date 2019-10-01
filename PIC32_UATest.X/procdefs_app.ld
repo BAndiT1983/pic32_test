@@ -1,49 +1,8 @@
-/*--------------------------------------------------------------------------
- * MPLAB XC Compiler -  PIC32MZ2048ECG100 linker script
- * Build date : Jul 16 2019
- * 
- * Copyright (c) 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
- * All rights reserved.
- * 
- * This software is developed by Microchip Technology Inc. and its
- * subsidiaries ("Microchip").
- * 
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are 
- * met:
- * 
- * 1.      Redistributions of source code must retain the above copyright
- *         notice, this list of conditions and the following disclaimer.
- * 2.      Redistributions in binary form must reproduce the above 
- *         copyright notice, this list of conditions and the following 
- *         disclaimer in the documentation and/or other materials provided 
- *         with the distribution.
- * 3.      Microchip's name may not be used to endorse or promote products
- *         derived from this software without specific prior written 
- *         permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR PURPOSE ARE DISCLAIMED. IN NO EVENT 
- * SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
- * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS;
- * OR BUSINESS INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
- * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
- * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
- */
-
 /* Default linker script, for normal executables */
-
-/*  NOTE: This single-file linker script replaces the two-file system used
- *  for older PIC32 devices. 
- */
-
 OUTPUT_FORMAT("elf32-tradlittlemips")
 OUTPUT_ARCH(pic32mx)
 ENTRY(_reset)
+
 /*
  * Provide for a minimum stack and heap size
  * - _min_stack_size - represents the minimum space that must be made
@@ -54,7 +13,8 @@ ENTRY(_reset)
  *                     the command line using the linker's --defsym option.
  */
 EXTERN (_min_stack_size _min_heap_size)
-PROVIDE(_min_stack_size = 0x400) ;
+PROVIDE(_min_stack_size = 0x800) ;
+PROVIDE(_min_heap_size = 0x800) ;
 
 /*************************************************************************
  * Legacy processor-specific object file.  Contains SFR definitions.
@@ -114,18 +74,20 @@ _GEN_EXCPT_ADDR                = _ebase_address + 0x180;
 
 MEMORY
 {
-    /* Bootloader C program is in the Boot_Flash */
-    /* adjust length, as the boot program grows. (0x80000 for now) */
-    kseg0_program_mem      (rx) : ORIGIN = 0x9D002000, LENGTH = 0x200000 - 0x2000
-    
-    /* first half of boot flash, dummy section */
-    kseg0_boot_mem              : ORIGIN = 0x9D000000, LENGTH = 0x0
-
     /* Interrupt vector table */
     exception_mem               : ORIGIN = 0x9D000000, LENGTH = 0x1000
+
+    /* Bootloader C program is in the Boot_Flash */
+    /* adjust length, as the boot program grows. (0x80000 for now) */
+    kseg0_program_mem      (rx) : ORIGIN = 0x9D001000, LENGTH = 128k
+    
+    /* first half of boot flash, dummy section */
+    kseg0_boot_mem              : ORIGIN = 0x9FC00200, LENGTH = 0x0
+
+
   
     /* other half of boot flash */
-    kseg1_boot_mem              : ORIGIN = 0x9D001000, LENGTH = 0x490
+    kseg1_boot_mem              : ORIGIN = 0xBFC00000, LENGTH = 0x0
     kseg1_boot_mem_4B0          : ORIGIN = 0x9D0014B0, LENGTH = (0x1000 - 0x4B0)
 
   config_BFC0FF40             : ORIGIN = 0xBFC0FF40, LENGTH = 0x4
@@ -160,8 +122,8 @@ MEMORY
   config_BFC0FFF4             : ORIGIN = 0xBFC0FFF4, LENGTH = 0x4
   config_BFC0FFF8             : ORIGIN = 0xBFC0FFF8, LENGTH = 0x4
   config_BFC0FFFC             : ORIGIN = 0xBFC0FFFC, LENGTH = 0x4
-  lowerbootaliaslastpage      : ORIGIN = 0xBFC10000, LENGTH = 0x4000
-  upperbootalias              : ORIGIN = 0xBFC20000, LENGTH = 0xFF00
+ /* lowerbootaliaslastpage      : ORIGIN = 0xBFC10000, LENGTH = 0x4000
+  upperbootalias              : ORIGIN = 0xBFC20000, LENGTH = 0xFF00*/
   config_BFC2FF40             : ORIGIN = 0xBFC2FF40, LENGTH = 0x4
   config_BFC2FF44             : ORIGIN = 0xBFC2FF44, LENGTH = 0x4
   config_BFC2FF48             : ORIGIN = 0xBFC2FF48, LENGTH = 0x4
@@ -194,8 +156,8 @@ MEMORY
   config_BFC2FFF4             : ORIGIN = 0xBFC2FFF4, LENGTH = 0x4
   config_BFC2FFF8             : ORIGIN = 0xBFC2FFF8, LENGTH = 0x4
   config_BFC2FFFC             : ORIGIN = 0xBFC2FFFC, LENGTH = 0x4
-  upperbootaliaslastpage      : ORIGIN = 0xBFC30000, LENGTH = 0x4000
-  boot1                       : ORIGIN = 0xBFC40000, LENGTH = 0xFF00
+  /*upperbootaliaslastpage      : ORIGIN = 0xBFC30000, LENGTH = 0x4000
+  boot1                       : ORIGIN = 0xBFC40000, LENGTH = 0xFF00*/
   config_BFC4FF40             : ORIGIN = 0xBFC4FF40, LENGTH = 0x4
   config_BFC4FF44             : ORIGIN = 0xBFC4FF44, LENGTH = 0x4
   config_BFC4FF48             : ORIGIN = 0xBFC4FF48, LENGTH = 0x4
@@ -228,7 +190,7 @@ MEMORY
   config_BFC4FFF4             : ORIGIN = 0xBFC4FFF4, LENGTH = 0x4
   config_BFC4FFF8             : ORIGIN = 0xBFC4FFF8, LENGTH = 0x4
   config_BFC4FFFC             : ORIGIN = 0xBFC4FFFC, LENGTH = 0x4
-  boot1lastpage               : ORIGIN = 0xBFC50000, LENGTH = 0x4000
+  /*boot1lastpage               : ORIGIN = 0xBFC50000, LENGTH = 0x4000*/
   config_BFC54000             : ORIGIN = 0xBFC54000, LENGTH = 0x4
   config_BFC54004             : ORIGIN = 0xBFC54004, LENGTH = 0x4
   config_BFC54008             : ORIGIN = 0xBFC54008, LENGTH = 0x4
@@ -236,7 +198,7 @@ MEMORY
   config_BFC54010             : ORIGIN = 0xBFC54010, LENGTH = 0x4
   config_BFC54020             : ORIGIN = 0xBFC54020, LENGTH = 0x4
   config_BFC54024             : ORIGIN = 0xBFC54024, LENGTH = 0x4
-  boot2                       : ORIGIN = 0xBFC60000, LENGTH = 0xFF00
+  /*boot2                       : ORIGIN = 0xBFC60000, LENGTH = 0xFF00*/
   config_BFC6FF40             : ORIGIN = 0xBFC6FF40, LENGTH = 0x4
   config_BFC6FF44             : ORIGIN = 0xBFC6FF44, LENGTH = 0x4
   config_BFC6FF48             : ORIGIN = 0xBFC6FF48, LENGTH = 0x4
@@ -269,7 +231,7 @@ MEMORY
   config_BFC6FFF4             : ORIGIN = 0xBFC6FFF4, LENGTH = 0x4
   config_BFC6FFF8             : ORIGIN = 0xBFC6FFF8, LENGTH = 0x4
   config_BFC6FFFC             : ORIGIN = 0xBFC6FFFC, LENGTH = 0x4
-  boot2lastpage               : ORIGIN = 0xBFC70000, LENGTH = 0x4000
+  /*boot2lastpage               : ORIGIN = 0xBFC70000, LENGTH = 0x4000*/
   kseg0_data_mem       (w!x)  : ORIGIN = 0x80000000, LENGTH = 0x80000
   sfrs                        : ORIGIN = 0xBF800000, LENGTH = 0x100000
   configsfrs_BFC0FF40         : ORIGIN = 0xBFC0FF40, LENGTH = 0x40
