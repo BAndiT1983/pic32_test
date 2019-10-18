@@ -25,7 +25,7 @@ PROVIDE(_min_heap_size = 0x800) ;
  * OPTIONAL() line below and add the pic32mx/lib/proc/<device>.S file
  * to your project.
  *************************************************************************/
-/*OPTIONAL("processor.o")*/
+OPTIONAL("processor.o")
 
 
 /*************************************************************************
@@ -82,12 +82,12 @@ MEMORY
     kseg0_program_mem      (rx) : ORIGIN = 0x9D001000, LENGTH = 128k
     
     /* first half of boot flash, dummy section */
-    kseg0_boot_mem              : ORIGIN = 0x9FC00200, LENGTH = 0x0
+    kseg0_boot_mem              : ORIGIN = 0x9FC00200, LENGTH = 0x480
 
 
   
     /* other half of boot flash */
-    kseg1_boot_mem              : ORIGIN = 0xBFC00000, LENGTH = 0x0
+    kseg1_boot_mem              : ORIGIN = 0xBFC01000, LENGTH = 0x0
     kseg1_boot_mem_4B0          : ORIGIN = 0x9D0014B0, LENGTH = (0x1000 - 0x4B0)
 
   config_BFC0FF40             : ORIGIN = 0xBFC0FF40, LENGTH = 0x4
