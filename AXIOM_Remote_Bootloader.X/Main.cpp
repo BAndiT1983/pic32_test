@@ -7,6 +7,7 @@
 // Firmware headers
 #include "Configuration/PIC32.h"
 #include "Periphery/I2C.h"
+#include "Periphery/ILI9341Device.h"
 
 #include "Helpers.h"
 
@@ -56,7 +57,7 @@ void set_mclr_e(unsigned val)
     ICSP_E_MCLR_O = (val & 1) ? 1 : 0;
 }
 
-void Setup()
+void Setup(ILI9341Display& display)
 {
     DisableIRQ();
 
@@ -79,38 +80,75 @@ void Setup()
     init_i2c_e();
     DelayMs(1);
     
-    
     set_mclr_w(1);
     set_mclr_e(1);
     DelayMs(1);
+
+    display.Initialize();
 
     EnableIRQ();
 
     //clear_framebuffer(ILI9341_CYAN);
 }
 
-//__attribute__((section(".reset.startup")))
+#define LCD_BLT_O	LATDbits.LATD10
+
+volatile uint16_t framebuffer[ILI9341_TFTWIDTH * ILI9341_TFTHEIGHT];
+
+ILI9341Display display(framebuffer);
+
+void __attribute__((section(".user_app"))) TestMethod()
+{
+    static uint8_t rgb[4];
+    rgb[0] = 0x14;
+    rgb[1] = 0x24;
+    rgb[2] = 0x00;
+    rgb[3] = 0x01;
+    i2c3_setn(0x20, rgb, 4);
+
+    LCD_BLT_O = 1;
+
+    display.ClearFramebuffer(RGB565(127,0,0));
+    display.DisplayFramebuffer();
+
+    while(1) 
+    {
+        DelayMs(1000);        
+        LCD_BLT_O = !LCD_BLT_O;
+    }
+}
+
 int main()
 {
-    void (*fptr)(void);
-    int i = 5;
-    
-    Setup();
+    Setup(display);
     
     // RGB LED
     static uint8_t rgb[4];
-    rgb[0] = 0x00;
+    rgb[0] = 0x14;
     rgb[1] = 0x00;
     rgb[2] = 0x04;
     rgb[3] = 0x01;
     i2c3_setn(0x20, rgb, 4);
     
-    fptr = (void (*)(void))0x9D000000;
-    //fptr();
+    extern uint16_t __USER_APP_ADDRESS;
+    void (*fptr)(void);
+    fptr = (void (*)(void))&__USER_APP_ADDRESS;
+    
+    display.DisplayFramebuffer();
+
+    int i = 0;
     
     while (1)
     {
-
+        DelayMs(500);        
+        LCD_BLT_O = !LCD_BLT_O;
+        
+        if(i == 5)
+        {
+            fptr();
+        } 
+        
+        i++;
     }
     
     return 0;

@@ -13,8 +13,11 @@ OPTS= -v -x c++ -c -mprocessor=32MZ2048ECG100 -mdspr2 -mdsp -mxc32cpp-lib -msmar
 #LD_OPTS= --defsym=__MPLAB_BUILD=1 --script="procdefs_app.ld" --no-code-in-dinit --no-dinit-in-serial-mem -Map="${BUILD_DIR}/UATest_memory.map" --report-mem --cref --warn-section-align --memorysummary ${BUILD_DIR}/memoryfile.xml
 LD_OPTS= --trace --defsym=__MPLAB_BUILD=1 -mprocessor=32MZ2048ECG100 --script="procdefs_app.ld" --no-code-in-dinit --no-dinit-in-serial-mem -Map="${BUILD_DIR}/UATest_memory.map" --report-mem --cref --warn-section-align --memorysummary ${BUILD_DIR}/memoryfile.xml -L${XC32_PATH}/pic32mx/lib/proc/32MZ2048ECG100 
 
+
 ${BUILD_DIR}/UATest.elf: ${OBJS}
 	${LD} ${BUILD_DIR}/${OBJS} ${LD_OPTS} -o ${BUILD_DIR}/UATest.elf
+#	${XC32_PATH}/bin/xc32-bin2hex ${BUILD_DIR}/UATest.elf ${BUILD_DIR}/UATest.hex
+	objcopy -O ihex ${BUILD_DIR}/UATest.elf ${BUILD_DIR}/UATest.hex
 
 ${OBJS}: ${SOURCE_FILES}
 	@ mkdir -p build

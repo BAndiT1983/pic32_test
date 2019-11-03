@@ -40,6 +40,7 @@ void InitPBUS(void)
     LockPIC32();
 }
 
+
 void init_icsp_w(void)
 {
     ICSP_W_MCLR_T = 0; // MCLR out
@@ -64,6 +65,7 @@ void set_mclr_e(unsigned val)
     ICSP_E_MCLR_O = (val & 1) ? 1 : 0;
 }
 
+
 void Setup()
 {
     DisableIRQ();
@@ -73,7 +75,7 @@ void Setup()
     PRECONbits.PFMWS = 0b010; // two wait states
 
     // cacheable, non-coherent, write-back, alloc
-    __builtin_mtc0(_CP0_CONFIG, 0, 0b011);
+    //__builtin_mtc0(_CP0_CONFIG, 0, 0b011);
 
     ConfigGPIO();
 
@@ -92,24 +94,64 @@ void Setup()
     EnableIRQ();
 }
 
+#define LCD_BLT_O	LATDbits.LATD10
+
+volatile uint16_t framebuffer[320 * 240];
+
+void __attribute__((section(".user_app"))) TestMethod()
+{
+    LCD_BLT_O = 1;
+
+    static uint8_t rgb[4];
+    rgb[0] = 0x00;
+    rgb[1] = 0x04;
+    rgb[2] = 0x00;
+    rgb[3] = 0x01;
+    i2c3_setn(0x20, rgb, 4);
+
+    while(1) 
+    {
+        DelayMs(5000);        
+        LCD_BLT_O = !LCD_BLT_O;
+    }
+}
+
 /*
  * 
  */
 int main(int argc, char** argv)
 {
     Setup();
-    
+
+    framebuffer[0] = 150;
+    framebuffer[223] = 241;
+
     // RGB LED
     static uint8_t rgb[4];
-    rgb[0] = 0x04;
-    rgb[1] = 0x04;
-    rgb[2] = 0x00;
+    rgb[0] = 0x00;
+    rgb[1] = 0x00;
+    rgb[2] = 0x04;
     rgb[3] = 0x01;
     i2c3_setn(0x20, rgb, 4);
+    LCD_BLT_O = 1;
 
+    extern uint16_t __USER_APP_ADDRESS;
+    void (*fptr)(void);
+    fptr = (void (*)(void))&__USER_APP_ADDRESS;
+
+    int i = 0;
+    
     while (1)
     {
-        DelayMs(30);
+        DelayMs(500);        
+        LCD_BLT_O = !LCD_BLT_O;
+        
+        if(i == 5)
+        {
+            fptr();
+        } 
+        
+        i++;
     }
 
     return 0;

@@ -45,7 +45,7 @@
         <targetDevice>PIC32MZ2048ECG100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.30</languageToolchainVersion>
         <platform>2</platform>
@@ -63,7 +63,7 @@
         <loading>
           <useAlternateLoadableFile>true</useAlternateLoadableFile>
           <parseOnProdLoad>true</parseOnProdLoad>
-          <alternateLoadableFile>build/PIC32_UATest.X</alternateLoadableFile>
+          <alternateLoadableFile>build/UATest.hex</alternateLoadableFile>
         </loading>
         <subordinates>
         </subordinates>

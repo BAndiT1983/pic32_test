@@ -61,7 +61,7 @@ void set_mclr_e(unsigned val)
     ICSP_E_MCLR_O = (val & 1) ? 1 : 0;
 }
 
-void Setup()
+void Setup(ILI9341Display& display)
 {
     DisableIRQ();
 
@@ -86,6 +86,8 @@ void Setup()
     set_mclr_e(1);
     DelayMs(1);
 
+    display.Initialize();
+
     EnableIRQ();
 }
 
@@ -94,7 +96,8 @@ void Setup()
  */
 int main(int argc, char** argv)
 {
-    Setup();
+    ILI9341Display display;
+    Setup(display);
     
     // RGB LED
     static uint8_t rgb[4];
